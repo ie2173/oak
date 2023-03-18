@@ -120,7 +120,7 @@ function WalletScreen() {
   const deleteMnemonicFromPhone = async () => {
     await deleteValueFor("oak-app-mnemonic");
     setMnemonic("");
-    setWriteSeedModal(!writeSeedModal);
+    setWriteSeedModal(false);
   };
 
   return (
