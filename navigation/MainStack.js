@@ -1,16 +1,16 @@
-import React from "react";
+import * as React from "react";
+import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { CreateStackNavigator } from "@react-navigation/native-stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { MainScreen } from "../screens";
 
-const Stack = CreateStackNavigator();
-
-const MainStack = () => {
-  <NavigationContainer>
-    <Stack.Navigator screenoptions={{ headersShowh: false }}>
-      <Stack.Screen name="Home" component={MainScreen} />
-    </Stack.Navigator>
-  </NavigationContainer>;
-};
-
-export default MainStack;
+const Stack = createNativeStackNavigator();
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={MainScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
